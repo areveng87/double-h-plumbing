@@ -1,0 +1,129 @@
+.reveal-footer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.reveal-footer__frame {
+  position: relative;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal-footer__frame.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-footer__bg {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* Natural, width-driven height: the full artwork — including the
+     transparent area and the torn edge — is always shown in full, at
+     full page width, never cropped or stretched. */
+}
+
+.reveal-footer__content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 6%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  text-align: center;
+  padding: 0 6vw;
+  line-height: normal;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.7);
+}
+
+.reveal-footer__brand {
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #fff;
+}
+
+.reveal-footer__tagline {
+  font-size: clamp(0.85rem, 1.4vw, 1.05rem);
+  color: var(--accent-strong);
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
+.reveal-footer__contact {
+  margin-top: 0.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.4rem 1.4rem;
+}
+
+.reveal-footer__phone {
+  font-size: clamp(1.4rem, 3.2vw, 2.1rem);
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.reveal-footer__phone:hover {
+  color: var(--accent-strong);
+}
+
+.reveal-footer__email {
+  font-size: clamp(0.9rem, 1.6vw, 1.1rem);
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(255, 255, 255, 0.4);
+}
+
+.reveal-footer__email:hover {
+  color: #fff;
+}
+
+.reveal-footer__badges {
+  margin-top: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+.reveal-footer__badges span {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+}
+
+.reveal-footer__copy {
+  margin-top: 1rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+@media (max-width: 480px) {
+  .reveal-footer__content {
+    bottom: 4%;
+    gap: 0.4rem;
+  }
+
+  .reveal-footer__badges {
+    margin-top: 0.5rem;
+  }
+
+  .reveal-footer__copy {
+    margin-top: 0.6rem;
+  }
+}
