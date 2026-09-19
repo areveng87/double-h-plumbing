@@ -155,12 +155,3 @@
   0%, 100% { transform: translate(-50%, 0); }
   50% { transform: translate(-50%, 8px); }
 }
-
-.fade-section--callout .fade-section__inner {
-  background: rgba(10, 37, 64, 0.55);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 28px;
-  padding: clamp(24px, 4vw, 44px);
-}

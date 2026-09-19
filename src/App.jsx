@@ -1,6 +1,7 @@
 import VideoBackground from './components/VideoBackground.jsx'
 import FadeSection from './components/FadeSection.jsx'
 import ContactSection from './components/ContactSection.jsx'
+import ReviewsGallery from './components/ReviewsGallery.jsx'
 import RevealFooter from './components/RevealFooter.jsx'
 
 function App() {
@@ -66,7 +67,6 @@ function App() {
           eyebrow="Why Double H"
           title="Quality over quantity"
           align="right"
-          variant="callout"
         >
           <p>
             We&rsquo;d rather do one job right than ten jobs fast. That means
@@ -74,6 +74,8 @@ function App() {
             local, owned and operated — not a call center three states away.
           </p>
         </FadeSection>
+
+        <ReviewsGallery />
 
         <ContactSection />
 

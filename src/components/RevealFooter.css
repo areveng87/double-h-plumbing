@@ -7,21 +7,19 @@
 .reveal-footer__frame {
   position: relative;
   width: 100%;
-  aspect-ratio: 1644 / 512;
+  aspect-ratio: 2172 / 724;
   /* aspect-ratio reserves the correct box the instant layout runs
-     (before the image even finishes downloading), sized to the
-     artwork's own natural proportions at full page width — so on
-     anything but a very narrow screen this is the frame's real height. */
-  min-height: 260px;
-  /* On a narrow screen the aspect-ratio height alone would come out
-     shorter than this, so min-height wins there and the frame is a bit
-     taller than the artwork's "natural" height. The image below is set
-     to stretch and fill that extra height (object-fit: fill) rather
-     than leaving it as a bare gap, so the artwork always visually
-     covers the whole footer with no flat color patch needed — the
-     stretch is invisible in practice since that lower band of the
-     artwork is a uniform solid fill. This also gives the overlaid text
-     room to breathe instead of being squeezed against the torn edge. */
+     (before the image even finishes downloading), matching the
+     artwork's own natural proportions (exactly 3:1) at full page
+     width — so this is the frame's real height everywhere. */
+  min-height: clamp(150px, 34vw, 260px);
+  /* A small buffer above the pure aspect-ratio height (~33.3vw), just
+     enough for the overlaid text to have breathing room on very narrow
+     phones without stretching the artwork noticeably — kept close to
+     the natural height on purpose, since a big gap between the two is
+     what made the image look visibly stretched before. On anything
+     tablet-width or wider the aspect-ratio height alone already clears
+     this, so it has no effect there. */
   overflow: hidden;
   background: transparent;
   opacity: 0;
@@ -43,10 +41,10 @@
   /* Fills the frame exactly. On anything but a very narrow screen the
      frame's own height already matches this image's natural aspect
      ratio (see .reveal-footer__frame), so this is a 1:1 fit — never
-     cropped, never visibly stretched. Only when min-height forces the
-     frame taller (small phones) does this stretch vertically, which
-     just elongates the artwork's uniform solid-color band instead of
-     leaving a transparent gap at the bottom. */
+     cropped, never visibly stretched. Only on very narrow phones, where
+     min-height adds a small buffer over the aspect-ratio height, does
+     this stretch vertically a little to still fully cover the frame —
+     kept small on purpose so it stays close to unnoticeable. */
   object-fit: fill;
 }
 
