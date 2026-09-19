@@ -3,9 +3,9 @@
   width: 100%;
   min-height: 70vh;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  padding: 5vh 6vw;
+  padding: 5vh 6vw 0;
 }
 
 .contact-card {
